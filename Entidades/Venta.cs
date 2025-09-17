@@ -9,9 +9,10 @@ namespace Entidades
     public class Venta
     {
         int id { get; set; }
-        int subtotal { get; set; }
-        int descuento { get; set; }
-        int total { get; set; }
+        string cliente { get; set; }
+        double subtotal { get; set; }
+        double descuento { get; set; }
+        double total { get; set; }
 
     }
 }
