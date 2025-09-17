@@ -8,11 +8,11 @@ namespace Entidades
 {
     public class Venta
     {
-        int id { get; set; }
-        string cliente { get; set; }
-        double subtotal { get; set; }
-        double descuento { get; set; }
-        double total { get; set; }
+        public int id { get; set; }
+        public string cliente { get; set; }
+        public double subtotal { get; set; }
+        public double descuento { get; set; }
+        public double total { get; set; }
 
     }
 }
