@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Class1
+    public class Venta
     {
+        int id { get; set; }
+        int subtotal { get; set; }
+        int descuento { get; set; }
+        int total { get; set; }
+
     }
 }
