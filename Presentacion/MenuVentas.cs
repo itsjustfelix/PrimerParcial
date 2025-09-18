@@ -20,7 +20,7 @@ namespace Presentacion
                 Console.WriteLine("Captura de Venta");
 
 
-                Console.WriteLine("digite el id");
+                Console.WriteLine("digite el id de la venta");
                 venta.id = int.Parse(Console.ReadLine());
 
                 Console.WriteLine("digite el nombre del cliente ");
@@ -102,12 +102,7 @@ namespace Presentacion
                         $"descuento : {item.descuento}\n" +
                         $"total : {item.total}"
 
-
-                        );
-                    Console.WriteLine("----------------------------------");
-                }
-
-                Console.WriteLine("ingrese le id de la venta a eliminar");
+                Console.WriteLine("ingrese el id de la venta a eliminar");
                 int id = int.Parse(Console.ReadLine());
                 Console.WriteLine("Esta seguro que desea eliminar esta venta? SI -> 1/ NO -> 0");
                 int opcion = int.Parse(Console.ReadLine());
@@ -150,11 +145,11 @@ namespace Presentacion
                 Console.Clear();
                 Console.WriteLine("Tienda Escolar Mi Aula");
                 Console.WriteLine("Gestion de ventas");
-                Console.WriteLine("");
-                Console.WriteLine("1. Agregar");
-                Console.WriteLine("2. consultar");
-                Console.WriteLine("3. Eliminar");
-                Console.WriteLine("4. Consultar el total de ventas");
+
+                Console.WriteLine("1. AGREGAR VENTAS");
+                Console.WriteLine("2. CONSULTAR VENTAS");
+                Console.WriteLine("3. ELIMINAR VENTAS");
+               
                 Console.WriteLine("0. Volver");
                 Console.WriteLine("Made by: Felix buelvas y Sandra Gomez");
                 Console.WriteLine("Presione cualquier tecla para salir al menu principal");
