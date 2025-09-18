@@ -11,6 +11,7 @@ namespace Logica
         Venta Agregar(Venta venta);
         List<Venta> Consultar();
         string Eliminar (int id);
+        double CalcularTotalVenta();
 
     }
 }

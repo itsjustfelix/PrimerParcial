@@ -57,5 +57,15 @@ namespace Logica
             if (subtotal <= 70000)return subtotal * 0.05; // 5%
             return subtotal * 0.08; // 8%
         }
+
+        public double CalcularTotalVenta()
+        {
+            double total = 0;
+            foreach (var venta in Consultar())
+            {
+               total += venta.total;
+            }
+            return total;
+        }
     }
 }

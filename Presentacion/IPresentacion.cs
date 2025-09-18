@@ -10,6 +10,7 @@ namespace Presentacion
     {
         void capturar();
         void consultar();
+        void consultaTotalIngresos();
         void eliminar();
         void menu();
     }
