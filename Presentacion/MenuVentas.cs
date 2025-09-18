@@ -101,33 +101,35 @@ namespace Presentacion
                         $"subtotal : {item.subtotal}\n" +
                         $"descuento : {item.descuento}\n" +
                         $"total : {item.total}"
-
-                Console.WriteLine("ingrese el id de la venta a eliminar");
-                int id = int.Parse(Console.ReadLine());
-                Console.WriteLine("Esta seguro que desea eliminar esta venta? SI -> 1/ NO -> 0");
-                int opcion = int.Parse(Console.ReadLine());
-                if (opcion == 1)
-                {
-                    Console.WriteLine(servicioventa.Eliminar(id));
-                    Console.Clear();
-                    Console.WriteLine("Estas son las ventas Actualmente");
-                    foreach (var item in servicioventa.Consultar())
-                    {
-                        Console.WriteLine(
-                            $"id venta : {item.id}\n" +
-                            $"nombre cliente : {item.cliente}\n" +
-                            $"subtotal : {item.subtotal}\n" +
-                            $"descuento : {item.descuento}\n" +
-                            $"total : {item.total}"
-
-
-                            );
-                        Console.WriteLine("----------------------------------");
-                    }
+                        );
+                    Console.WriteLine("----------------------------------");
                 }
-                else Console.WriteLine("Operacion cancelada");
-                Console.WriteLine("Presione cualquier tecla para salir al menu principal");
-                Console.ReadKey();
+
+                    Console.WriteLine("ingrese el id de la venta a eliminar");
+                    int id = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Esta seguro que desea eliminar esta venta? SI -> 1/ NO -> 0");
+                    int opcion = int.Parse(Console.ReadLine());
+                    if (opcion == 1)
+                    {
+                        Console.WriteLine(servicioventa.Eliminar(id));
+                        Console.Clear();
+                        Console.WriteLine("Estas son las ventas Actualmente");
+                        foreach (var venta in servicioventa.Consultar())
+                        {
+                        Console.WriteLine(
+                            $"id venta : {venta.id}\n" +
+                            $"nombre cliente : {venta.cliente}\n" +
+                            $"subtotal : {venta.subtotal}\n" +
+                            $"descuento : {venta.descuento}\n" +
+                            $"total : {venta.total}"
+                            );
+                            Console.WriteLine("----------------------------------");
+                        }
+                    }
+                    else Console.WriteLine("Operacion cancelada");
+                    Console.WriteLine("Presione cualquier tecla para salir al menu principal");
+                    Console.ReadKey();
+                
             }
             catch (Exception ex)
             {
@@ -149,7 +151,7 @@ namespace Presentacion
                 Console.WriteLine("1. AGREGAR VENTAS");
                 Console.WriteLine("2. CONSULTAR VENTAS");
                 Console.WriteLine("3. ELIMINAR VENTAS");
-               
+                Console.WriteLine("4. CONSULTAR TOTAL DE INGRESOS");
                 Console.WriteLine("0. Volver");
                 Console.WriteLine("Made by: Felix buelvas y Sandra Gomez");
                 Console.WriteLine("Presione cualquier tecla para salir al menu principal");
