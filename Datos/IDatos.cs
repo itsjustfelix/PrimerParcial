@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
-namespace Logica
+using System.IO;
+namespace Datos
 {
-    public interface IService
+    public interface IDatos
     {
-        string Agregar(Venta venta);
+        string Capturar(Venta venta);
         List<Venta> Consultar();
-        string Eliminar (int id);
 
+        String eliminar(List<Venta> lista);
+
+        Venta Mapeo(string linea);
     }
 }
