@@ -20,7 +20,7 @@ namespace Presentacion
                 Console.WriteLine("Captura de Venta");
 
 
-                Console.WriteLine("digite el id");
+                Console.WriteLine("digite el id de la venta");
                 venta.id = int.Parse(Console.ReadLine());
 
                 Console.WriteLine("digite el nombre del cliente ");
@@ -83,7 +83,7 @@ namespace Presentacion
                 Console.Clear();
                 Console.WriteLine("eliminar venta");
 
-                Console.WriteLine("ingrese le id de la venta a eliminar");
+                Console.WriteLine("ingrese el id de la venta a eliminar");
                 int id = int.Parse(Console.ReadLine());
                 Console.WriteLine(servicioventa.Eliminar(id));
 
@@ -106,9 +106,9 @@ namespace Presentacion
             {
                 Console.WriteLine("Gestion de ventas");
 
-                Console.WriteLine("1. Agregar");
-                Console.WriteLine("2. consultar");
-                Console.WriteLine("3. Eliminar");
+                Console.WriteLine("1. AGREGAR VENTAS");
+                Console.WriteLine("2. CONSULTAR VENTAS");
+                Console.WriteLine("3. ELIMINAR VENTAS");
                
                 Console.WriteLine("0. Volver");
 
