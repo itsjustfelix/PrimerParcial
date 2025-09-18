@@ -12,18 +12,18 @@ namespace Datos
     public class DatosVenta : IDatos
     {
         string path = "Ventas";
-        public string Capturar(Venta venta)
+        public Venta Capturar(Venta venta)
         {
             try
             {
                 StreamWriter sw = new StreamWriter(path, true);
                 sw.WriteLine($"{venta.id};{venta.cliente};{venta.subtotal};{venta.descuento};{venta.total}");
                 sw.Close();
-                return $"la venta fue registrada con exito";
+                return venta;
             }
             catch (Exception ex)
             {
-                return $"hubo un error: {ex.Message}";
+               throw new Exception($"hubo un error -> {ex.Message}");
             }
         }
 

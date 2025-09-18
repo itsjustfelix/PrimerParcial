@@ -14,5 +14,10 @@ namespace Entidades
         public double descuento { get; set; }
         public double total { get; set; }
 
+        public void CalcularTotal()
+        {
+            total = subtotal - descuento;
+        }
+
     }
 }

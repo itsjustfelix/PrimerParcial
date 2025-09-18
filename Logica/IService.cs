@@ -8,7 +8,7 @@ namespace Logica
 {
     public interface IService
     {
-        string Agregar(Venta venta);
+        Venta Agregar(Venta venta);
         List<Venta> Consultar();
         string Eliminar (int id);
 

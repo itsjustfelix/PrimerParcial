@@ -11,10 +11,13 @@ namespace Logica
     {
         DatosVenta datosVenta = new DatosVenta();
 
-        public string Agregar(Venta venta)
+        public Venta Agregar(Venta venta)
         {
-            if(venta == null) throw new ArgumentNullException("La venta no puede ser nula");
-            
+            if (venta == null) throw new ArgumentNullException("La venta no puede ser nula");
+            if (IdExistente(venta.id)) throw new ArgumentException("El id de la venta ya existe");
+            var descuento = CalcularDescuento(venta.subtotal);
+            venta.descuento = descuento;
+            venta.CalcularTotal();
             return datosVenta.Capturar(venta);
         }
 
@@ -37,6 +40,22 @@ namespace Logica
             {
                 return $"error -> {e.Message}";
             }
+        }
+
+        private bool IdExistente(int id)
+        {
+            foreach (var venta in Consultar())
+            {
+                if (venta.id == id) return true;
+            }
+            return false;
+        }
+
+        public double CalcularDescuento(double subtotal)
+        {
+            if (subtotal < 30000)return 0; // 0%
+            if (subtotal <= 70000)return subtotal * 0.05; // 5%
+            return subtotal * 0.08; // 8%
         }
     }
 }

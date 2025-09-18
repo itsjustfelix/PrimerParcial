@@ -13,62 +13,89 @@ namespace Presentacion
         ServicioVenta servicioventa = new ServicioVenta();
         public void capturar()
         {
-            Venta venta = new Venta();
-            Console.Clear();
-            Console.WriteLine("Captura de Venta");
+            try
+            {   
+                Venta venta = new Venta();
+                Console.Clear();
+                Console.WriteLine("Captura de Venta");
 
 
-            Console.WriteLine("digite el id");
-            venta.id = int.Parse(Console.ReadLine());
+                Console.WriteLine("digite el id");
+                venta.id = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("digite el nombre del cliente ");
-            venta.cliente = Console.ReadLine();
+                Console.WriteLine("digite el nombre del cliente ");
+                venta.cliente = Console.ReadLine();
 
-            Console.WriteLine("digite el subtotal de la compra");
-            venta.subtotal = double.Parse(Console.ReadLine());
+                Console.WriteLine("digite el subtotal de la compra");
+                venta.subtotal = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("su subtotal es:");
+                var resultado = servicioventa.Agregar(venta);
+                Console.WriteLine($"su total es: {resultado.total}");
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"{ex.Message}");
+            }
 
             Console.ReadKey();
-
-
         }
 
         public void consultar()
         {
-            Console.Clear();
-            Console.WriteLine("Consulta de Venta");
-
-            Console.WriteLine("-----------------------------------------");
-            foreach (var item in servicioventa.Consultar())
+            try
             {
-                Console.WriteLine(
-                    $"id venta : {item.id}\n" +
-                    $"nombre cliente : {item.cliente}\n" +
-                    $"subtotal : {item.subtotal}\n" +
-                    $"descuento : {item.descuento}\n" +
-                    $"total : {item.total}"
-                    
+                Console.Clear();
+                Console.WriteLine("Consulta de Venta");
 
-                    );
-                Console.WriteLine("----------------------------------");
+                Console.WriteLine("-----------------------------------------");
+                foreach (var item in servicioventa.Consultar())
+                {
+                    Console.WriteLine(
+                        $"id venta : {item.id}\n" +
+                        $"nombre cliente : {item.cliente}\n" +
+                        $"subtotal : {item.subtotal}\n" +
+                        $"descuento : {item.descuento}\n" +
+                        $"total : {item.total}"
+
+
+                        );
+                    Console.WriteLine("----------------------------------");
+                }
+
+                Console.WriteLine("Presione cualquier tecla para salir al menu principal");
+               
             }
+            catch (Exception ex)
+            {
 
-            Console.WriteLine("Presione cualquier tecla para salir al menu principal");
+                Console.WriteLine($"{ex.Message}");
+            }
             Console.ReadKey();
         }
 
         public void eliminar()
         {
-            Console.Clear();
-            Console.WriteLine("eliminar venta");
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("eliminar venta");
 
-            Console.WriteLine("ingrese le id de la venta a eliminar");
-            int id = int.Parse(Console.ReadLine());
-            Console.WriteLine(servicioventa.Eliminar(id));
+                Console.WriteLine("ingrese le id de la venta a eliminar");
+                int id = int.Parse(Console.ReadLine());
+                Console.WriteLine(servicioventa.Eliminar(id));
 
-            Console.WriteLine("Presione cualquier tecla para salir al menu principal");
-            Console.ReadKey();
+                Console.WriteLine("Presione cualquier tecla para salir al menu principal");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"{ex.Message}");
+            }
+           
         }
 
         public void menu()

@@ -9,7 +9,7 @@ namespace Datos
 {
     public interface IDatos
     {
-        string Capturar(Venta venta);
+        Venta Capturar(Venta venta);
         List<Venta> Consultar();
 
         String eliminar(List<Venta> lista);
