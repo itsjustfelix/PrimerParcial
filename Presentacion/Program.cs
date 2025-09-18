@@ -10,6 +10,8 @@ namespace Presentacion
     {
         static void Main(string[] args)
         {
+            MenuVentas menu = new MenuVentas();
+            menu.menu();
         }
     }
 }
